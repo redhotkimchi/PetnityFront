@@ -73,7 +73,7 @@ const PostDetail = () => {
       <p><strong>Dog Age:</strong> {post.dogAge} years old</p>
       <p><strong>Location:</strong> {post.location}</p>
       <p><strong>Message:</strong> {post.message}</p>
-      <p><strong>Created At:</strong> {new Date(post.createdAt).toLocaleString()}</p>
+      <p class="text-3xl font-bold underline"><strong>Created At:</strong> {new Date(post.createdAt).toLocaleString()}</p>
       <p><strong>Updated At:</strong> {new Date(post.updatedAt).toLocaleString()}</p>
 
       <div>

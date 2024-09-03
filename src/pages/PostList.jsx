@@ -27,21 +27,23 @@ const PostList = () => {
   if (error) return <p>Error: {error}</p>; // 에러가 발생했을 때 표시할 텍스트
 
   return (
-    <div>
-      <h1>Post List</h1>
-      <Link to="/posts/create">
-        <button>Add New Post</button>
-      </Link>
-      <ul>
-        {posts.map((post) => ( // 게시글 데이터를 순회하며 리스트 아이템으로 렌더링합니다.
-          <li key={post.id}>
-            <Link to={`/posts/${post.id}`}>
-              <h2>{post.title}</h2>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="max-w-2xl mx-auto p-4">
+        <h1 className="text-4xl font-bold mb-6 text-center">Post List</h1>
+        <Link to="/posts/create">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-6">
+            Add New Post
+          </button>
+        </Link>
+        <ul className="space-y-4">
+          {posts.map((post) => ( // 게시글 데이터를 순회하며 리스트 아이템으로 렌더링합니다.
+              <li key={post.id} className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg">
+                <Link to={`/posts/${post.id}`}>
+                  <h2 className="text-2xl font-semibold text-blue-700 hover:text-blue-900">{post.title}</h2>
+                </Link>
+              </li>
+          ))}
+        </ul>
+      </div>
   );
 };
 
